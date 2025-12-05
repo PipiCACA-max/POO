@@ -87,7 +87,7 @@ class Camionetas:
     def actualizar(marca, color, modelo, velocidad, caballaje, plazas,traccion, cerrada, id):
         try:
             cursor.execute(
-                "update camionetas set marca=%s, color=%s, modelo=%s, velocidad=%s, caballaje=%s, plazas=%s,traccion=%s, cerrada=%s where id_camionetas=%s",
+                "update camionetas set marca=%s, color=%s, modelo=%s, velocidad=%s, caballaje=%s, plazas=%s,traccion=%s, cerrada=%s where id_camioneta=%s",
                 (marca, color, modelo, velocidad, caballaje, plazas,traccion,cerrada, id)
             )
             conexion.commit()
@@ -99,7 +99,7 @@ class Camionetas:
     def eliminar(id):
         try:
             cursor.execute(
-                "delete from camionetas where id_camionetas=%s",(id,)
+                "delete from camionetas where id_camioneta=%s",(id,)
             )
             conexion.commit()
             return True
